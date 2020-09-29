@@ -1,0 +1,179 @@
+{
+    "key": "group_5ef2a7c78f246",
+    "title": "Block Event Countdown",
+    "fields": [
+        {
+            "key": "field_5ef2a86984f4a",
+            "label": "",
+            "name": "acfes_show_live_event",
+            "type": "true_false",
+            "instructions": "After the countdown ends, display the next upcoming live session, until the event is over",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Show the live session?",
+            "default_value": 1,
+            "ui": 0,
+            "show_column": 0,
+            "show_column_sortable": 0,
+            "show_column_weight": 1000,
+            "allow_quickedit": 0,
+            "allow_bulkedit": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_5ef37337af17d",
+            "label": "Show upcoming session from which category?",
+            "name": "acfes_live_event_taxonomy",
+            "type": "taxonomy-chooser",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5ef2a86984f4a",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "tax_type": 0,
+            "choices": [
+                "acfes_track",
+                "acfes_location",
+                "acfes_session_category"
+            ],
+            "type_value": 1,
+            "allow_null": 0,
+            "ui": 0,
+            "ajax": 0,
+            "multiple": 0
+        },
+        {
+            "key": "field_5ef2a90484f4b",
+            "label": "Countdown Text",
+            "name": "acfes_countdown_text",
+            "type": "wysiwyg",
+            "instructions": "Shows alongside the countdown",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "visual",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 0
+        },
+        {
+            "key": "field_5ef352ffb8825",
+            "label": "Pre-Event CTA",
+            "name": "acfes_pre_event_link",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array"
+        },
+        {
+            "key": "field_5ef2a92284f4c",
+            "label": "Event Over Text",
+            "name": "acfes_event_passed_text",
+            "type": "wysiwyg",
+            "instructions": "Shows after the date of the event has passed",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "visual",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 0
+        },
+        {
+            "key": "field_5ef3531fb8826",
+            "label": "Post-Event CTA",
+            "name": "acfes_post_event_link",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array"
+        },
+        {
+            "key": "field_5ef34b58f0d2c",
+            "label": "Background Color",
+            "name": "acfes_background_color",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": ""
+        },
+        {
+            "key": "field_5ef34b6ef0d2d",
+            "label": "Text Color",
+            "name": "acfes_text_color",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/acfes-block-countdown"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1596999774
+}

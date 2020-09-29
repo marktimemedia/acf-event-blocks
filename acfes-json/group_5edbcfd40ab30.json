@@ -1,0 +1,167 @@
+{
+    "key": "group_5edbcfd40ab30",
+    "title": "Schedule",
+    "fields": [
+        {
+            "key": "field_5ef8ab4eb7a4e",
+            "label": "Scheduled Session",
+            "name": "acfes_scheduled_session",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "This is a scheduled session. Uncheck to not assign this session a specific date and time",
+            "default_value": 1,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_5edbd0b06adb5",
+            "label": "Session Time",
+            "name": "acfes_session_time",
+            "type": "date_time_picker",
+            "instructions": "Start time and date for the session",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5ef8ab4eb7a4e",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "display_format": "F j, Y g:i a",
+            "return_format": "Y-m-d H:i:s",
+            "first_day": 0,
+            "show_column": 1,
+            "show_column_sortable": 0,
+            "show_column_weight": 1000,
+            "allow_quickedit": 0,
+            "allow_bulkedit": 0
+        },
+        {
+            "key": "field_5edbd0c66adb6",
+            "label": "Session End Time",
+            "name": "acfes_session_end_time",
+            "type": "date_time_picker",
+            "instructions": "End time and date for this session",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5ef8ab4eb7a4e",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "display_format": "F j, Y g:i a",
+            "return_format": "Y-m-d H:i:s",
+            "first_day": 0,
+            "show_column": 0,
+            "show_column_sortable": 0,
+            "show_column_weight": 1000,
+            "allow_quickedit": 0,
+            "allow_bulkedit": 0
+        },
+        {
+            "key": "field_5edbd3e96adb7",
+            "label": "Session Type",
+            "name": "acfes_session_type",
+            "type": "select",
+            "instructions": "Mainstage sessions are styled differently from regular sessions in the schedule grid. Break sessions do not contain a link to the session page.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "session": "Regular Session",
+                "mainstage": "Mainstage\/Keynote Session",
+                "special": "Special\/Highlighted Session",
+                "custom": "Break, Lunch (No Link)"
+            },
+            "default_value": "session",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "show_column": 0,
+            "show_column_sortable": 0,
+            "show_column_weight": 1000,
+            "allow_quickedit": 1,
+            "allow_bulkedit": 1,
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_5eff8acf2cb08",
+            "label": "Show link to break session?",
+            "name": "acfes_break_link",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5edbd3e96adb7",
+                        "operator": "==",
+                        "value": "custom"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Link this break session to its page. Uncheck to not output a link to its page in the schedule.",
+            "default_value": 0,
+            "ui": 0,
+            "show_column": 0,
+            "show_column_sortable": 0,
+            "show_column_weight": 1000,
+            "allow_quickedit": 0,
+            "allow_bulkedit": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "acfes_session"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1597497759
+}

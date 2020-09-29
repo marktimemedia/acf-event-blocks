@@ -1,0 +1,61 @@
+.inside .acf-repeater .acf-row-handle {
+  width: 10px;
+}
+
+.inside .acf-repeater .acf-row-handle .acf-icon {
+  margin: -8px 0 0 -5px;
+}
+
+.inside .acf-fields .acf-field {
+  padding: 10px;
+}
+
+.inside .acf-fields .acf-label {
+  margin-bottom: 5px;
+}
+
+.inside .acf-fields span.link-title {
+  display: block;
+}
+
+.inside .acf-file-uploader .file-info {
+  margin-left: 0;
+}
+
+.inside .acf-file-uploader .file-icon {
+  display: none;
+}
+
+// admin post archive screen
+#wpbody-content .inline-edit-row {
+
+  .inline-edit-col-qed {
+    border: 0;
+    clear: right;
+
+    legend {
+      display: none;
+    }
+
+    .qed-fields {
+      background: transparent;
+    }
+
+    .acf-field {
+      background: transparent;
+      border: 0;
+      box-shadow: none;
+      margin-top: 0;
+      padding: 0;
+    }
+  }
+}
+
+// mods per post type
+.post-type-acfes_session, .post-type-acfes_speaker, .post-type-acfes_sponsor, .post-type-acfes_exhibitor {
+  #wpbody-content .inline-edit-row {
+    fieldset.inline-edit-date {
+      display: none;
+    }
+  }
+}

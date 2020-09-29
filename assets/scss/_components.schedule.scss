@@ -1,0 +1,415 @@
+/* Color + Style Rules */
+
+.acfes-schedule {
+
+  h3 {
+    font-size: 1.3em;
+  }
+
+  .acfes-session-type-session {
+    background-color: #eee;
+  }
+
+  .acfes-global-session-mainstage, .acfes-session-type-mainstage {
+    background-color: #bfdcea !important;
+  }
+
+  .acfes-global-session-custom, .acfes-session-type-custom {
+    background-color: #efefef  !important;
+  }
+  .acfes-global-session-special, .acfes-session-type-special {
+    background-color: #fcf8d4  !important;
+  }
+}
+
+// Table Colors
+.acfes-layout-table {
+  border:1px solid #ddd;
+
+  tr {
+    background-color: #fff;
+  }
+
+  td {
+    border: #ddd solid 0;
+  }
+
+  thead th {
+    background-color: #f2f2f2;
+    border: #ddd solid 1px;
+    color: #000000;
+  }
+
+  [class*="acfes-session-type-"] {
+    border-width: 1px;
+    border-bottom-width: 0;
+  }
+
+  .acfes-session-type-session {
+    background-color: transparent;
+  }
+
+  .acfes-col-time {
+    width: 120px;
+  }
+
+  .acfes-col-time, .acfes-col-track { // header
+    background-color: #eee;
+  }
+
+  .acfes-time {
+    background-color: transparent;
+    border-width:1px;
+  }
+
+  .acfes-session-empty {
+    background-color: transparent;
+    border-right-width: 1px;
+  }
+
+  // Table Metadata on Mobile
+  @media screen and (max-width: $med-bp) {
+    .acfes-session-type-session {
+      &:before {
+        color: #555;
+      }
+    }
+  }
+}
+
+// Grid Colors
+.acfes-layout-grid {
+
+  .acfes-global-session {
+    background-color: #eee;
+  }
+}
+
+/* Dark Rules */
+.acfes-schedule.acfes-color-scheme-dark {
+  color: #ffffff;
+
+  a, button {
+    color: #ffffff;
+  }
+
+
+  .acfes-session-title {
+    color: #ffffff;
+  }
+
+  .acfes-session-type-session {
+    background-color: #222;
+  }
+
+  .acfes-global-session-mainstage, .acfes-session-type-mainstage {
+    background-color: #0A436D !important;
+  }
+
+  .acfes-global-session-custom, .acfes-session-type-custom {
+    background-color: #010101 !important;
+  }
+
+  ::-moz-selection {
+    color: #fff;
+  }
+
+  ::selection {
+      color: #fff;
+  }
+
+  // Table Dark Colors
+  &.acfes-layout-table {
+    border-color: #fff;
+
+    tr {
+      background-color: #222;
+    }
+
+    td {
+      border-color: #fff;
+    }
+
+    thead th {
+      background-color: #111;
+      border-color: #fff;
+      color: #fff;
+    }
+
+    [class*="acfes-session-type-"] {
+
+    }
+
+    .acfes-session-type-session {
+      // background-color: transparent;
+    }
+
+    .acfes-col-time, .acfes-col-track { // header
+      background-color: #000;
+    }
+
+    .acfes-time {
+      // background-color: transparent;
+    }
+
+    .acfes-session-empty {
+      // background-color: transparent;
+    }
+
+    @media screen and (max-width: $med-bp) {
+      .acfes-session-type-session:before {
+        color: #eee;
+      }
+    }
+  }
+
+  // Grid Dark Colors
+  &.acfes-layout-grid {
+
+    .acfes-col-track, .acfes-time {
+      color: #000;
+    }
+
+    .acfes-session-cell-content {
+      color: #ffffff;
+    }
+  }
+}
+
+
+/* General Structure */
+.acfes-schedule {
+  .acfes-session-cell-content h3 {
+    margin-top: 0;
+    margin-bottom: .5em;
+  }
+  .acfes-session-speakers {
+    ul {
+      list-style: none;
+      margin-left: 0;
+      padding: 0;
+    }
+  }
+
+  button {
+    font-size: 14px;
+  }
+}
+
+
+
+
+/* TABLE STRUCTURE */
+.acfes-layout-table {
+  width: 100%;
+  border-spacing: 0px;
+  table-layout: fixed;
+  margin-bottom: 0;
+
+  tbody,
+  tr,
+  td,
+  th {
+    text-align: center;
+    vertical-align: top;
+  }
+
+  tr {
+    td {
+      padding-top: 1em;
+      padding-bottom: 1em;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+  }
+
+  thead th {
+    border-bottom: none;
+    font-weight: bold;
+    padding-top: .8em;
+    padding-bottom: .8em;
+    border-bottom: none;
+  }
+
+  .acfes-session-empty {
+    // border-right: 1px solid #dee2e6;
+  }
+
+  .acfes-time {
+    min-width: 105px;
+
+  }
+
+  .acfes-track-description, .acfes-session-speakers {
+    display: inline-block;
+  }
+
+  .acfes-global-session {
+
+    td:not(.acfes-time) {
+      padding: 1.5em 0 !important;
+    }
+  }
+
+  @media screen and (max-width: $med-bp) {
+      width: 100%;
+
+      tbody,
+      tr,
+      td,
+      th {
+        display: block;
+      }
+
+      tr {
+        td {
+
+        }
+      }
+
+      thead {
+        display: none;
+      }
+
+      [class*="acfes-session-type-"] {
+        border-width: 0 !important;
+        border-top: 0;
+      }
+
+      .acfes-session-empty {
+        display: none;
+      }
+
+      .acfes-time {
+        font-size: 1.2em;
+        padding: 0 1em;
+        margin-top: 1em;
+        border-left: 0;
+        border-right: 0;
+      }
+
+      .acfes-session-type-session {
+        line-height: 1.4;
+      }
+
+      .acfes-session-type-session {
+        &:before {
+          content: attr(data-track-title);
+          display: block;
+          font-size: 110%;
+          line-height: 1;
+          margin-bottom: .5em;
+          padding: .3em .8em;
+        }
+      }
+
+      .acfes-session-type-session + .acfes-session-type-session {
+        &:before {
+          border-top: 1px dotted #ccc;
+          padding-top: .8em;
+        }
+      }
+
+      .acfes-global-session {
+        .acfes-session-type-session {
+          &:before {
+            display: none;
+          }
+        }
+      }
+
+      .acfes-session-title {
+        display: block;
+        padding: .8em;
+      }
+
+      .acfes-session-speakers {
+        display: block;
+      }
+
+      &.acfes-color-scheme-dark {
+        .acfes-session-type-session:before {
+        }
+      }
+  }
+}
+
+/* GRID LAYOUT */
+.acfes-layout-grid {
+  .acfes-time, .acfes-col-track {
+    display: none;
+  }
+
+  [class*="acfes-session-type-"] {
+    margin-bottom: 1em;
+    padding: 1em;
+    font-size: .8em;
+  }
+
+  @supports (display: grid) {
+    @media screen and (min-width: $med-bp) {
+      [class*="acfes-session-type-"] {
+        margin: 0;
+      }
+    }
+  }
+
+
+  .acfes-session-title {
+
+    &:hover {
+    }
+    &:focus {
+      // outline: 2px dotted rgba(255, 255, 255, 0.8);
+    }
+  }
+
+  .acfes-session-speakers {
+    ul {
+      padding-left: 0;
+      list-style: none;
+    }
+  }
+
+  .acfes-global-session {
+
+    td {
+      padding: 1.2em 0 !important;
+    }
+  }
+
+
+  @media screen and (max-width: $med-bp) {
+    .acfes-session-speakers {
+      display: block;
+    }
+
+    .acfes-session-time {
+      font-weight: bold;
+    }
+  }
+
+  @media screen and (min-width: $med-bp) {
+    .acfes-session-time, .acfes-session-track {
+      display: none;
+    }
+
+    .acfes-time {
+      display: block;
+      grid-column: times;
+      background-color: transparent;
+      margin: 0;
+      font-size: 1em;
+      font-weight: bold;
+      font-size: .8em;
+    }
+
+    .acfes-col-track {
+      display: block;
+      padding: .8em .3em .3em;
+      background-color: transparent;
+      font-weight: bold;
+      font-size: .8em;
+    }
+  }
+}

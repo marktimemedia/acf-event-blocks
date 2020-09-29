@@ -1,0 +1,41 @@
+{
+    "key": "group_5ee9015d5adb8",
+    "title": "Block Meta Files List",
+    "fields": [
+        {
+            "key": "field_5ee9016185435",
+            "label": "Files And Downloads List",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "If there are any files or downloads associated with this content, they will show here",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/acfes-block-file-list"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1596999920
+}

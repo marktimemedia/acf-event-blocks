@@ -1,0 +1,140 @@
+{
+    "key": "group_5eea105369320",
+    "title": "Block Event Embed",
+    "fields": [
+        {
+            "key": "field_5eea105901515",
+            "label": "URL or iFrame?",
+            "name": "acfes_url_or_iframe",
+            "type": "radio",
+            "instructions": "Select whether you will be pasting a URL (from a site like YouTube or Vimeo), or iFrame code",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "60",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "oembed": "URL",
+                "html": "iFrame"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "default_value": "",
+            "layout": "horizontal",
+            "return_format": "value",
+            "show_column": 0,
+            "show_column_sortable": 0,
+            "show_column_weight": 1000,
+            "allow_quickedit": 0,
+            "allow_bulkedit": 0,
+            "save_other_choice": 0
+        },
+        {
+            "key": "field_5eea3aedaf72e",
+            "label": "Aspect Ratio",
+            "name": "acfes_aspect_ratio",
+            "type": "select",
+            "instructions": "Select embed aspect ratio (default is standard HD 16x9)",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "40",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "wp-embed-aspect-21-9": "21x9",
+                "wp-embed-aspect-18-9": "18x9",
+                "wp-embed-aspect-16-9": "16x9",
+                "wp-embed-aspect-4-3": "4x3",
+                "wp-embed-aspect-1-1": "1x1 (square)",
+                "wp-embed-aspect-1-2": "1 x 2 (tall)"
+            },
+            "default_value": "wp-embed-aspect-16-9",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "show_column": 0,
+            "show_column_sortable": 0,
+            "show_column_weight": 1000,
+            "allow_quickedit": 0,
+            "allow_bulkedit": 0,
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_5eea10ae01516",
+            "label": "URL",
+            "name": "acfes_oembed",
+            "type": "oembed",
+            "instructions": "Paste your URL here. A preview will show above if the embed is working.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5eea105901515",
+                        "operator": "==",
+                        "value": "oembed"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "width": "",
+            "height": "",
+            "show_column": 0,
+            "show_column_weight": 1000
+        },
+        {
+            "key": "field_5eea10ca01517",
+            "label": "iFrame",
+            "name": "acfes_html",
+            "type": "wysiwyg",
+            "instructions": "Paste your iframe code here",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5eea105901515",
+                        "operator": "==",
+                        "value": "html"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "text",
+            "media_upload": 0,
+            "toolbar": "full",
+            "delay": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/acfes-block-embed"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1596999807
+}

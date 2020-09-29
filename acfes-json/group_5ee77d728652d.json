@@ -1,0 +1,133 @@
+{
+    "key": "group_5ee77d728652d",
+    "title": "Session Details",
+    "fields": [
+        {
+            "key": "field_5ee77d728b4f9",
+            "label": "Speakers",
+            "name": "acfes_session_speakers",
+            "type": "post_object",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "acfes_speaker"
+            ],
+            "taxonomy": "",
+            "allow_null": 0,
+            "multiple": 1,
+            "return_format": "object",
+            "show_column": 0,
+            "show_column_weight": 1000,
+            "allow_quickedit": 1,
+            "allow_bulkedit": 1,
+            "ui": 1
+        },
+        {
+            "key": "field_5ee77d728b500",
+            "label": "Sponsors",
+            "name": "acfes_session_sponsors",
+            "type": "post_object",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "acfes_sponsor",
+                "acfes_exhibitor"
+            ],
+            "taxonomy": "",
+            "allow_null": 0,
+            "multiple": 1,
+            "return_format": "object",
+            "show_column": 0,
+            "show_column_weight": 1000,
+            "allow_quickedit": 1,
+            "allow_bulkedit": 1,
+            "ui": 1
+        },
+        {
+            "key": "field_5ee77d728b505",
+            "label": "Downloads",
+            "name": "acfes_file_repeater",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "field_5ee779b6a2c23",
+            "min": 0,
+            "max": 0,
+            "layout": "block",
+            "button_label": "Add File",
+            "sub_fields": [
+                {
+                    "key": "field_5ee77d729580b",
+                    "label": "Add a downloadable file",
+                    "name": "acfes_post_uploaded_file",
+                    "type": "file",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "library": "uploadedTo",
+                    "min_size": "",
+                    "max_size": "",
+                    "mime_types": ""
+                }
+            ]
+        },
+        {
+            "key": "field_5ee77d7298878",
+            "label": "Slide Link",
+            "name": "acfes_slide_link",
+            "type": "url",
+            "instructions": "Link to hosted slides (optional)",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "acfes_session"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1597002018
+}

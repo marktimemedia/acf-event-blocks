@@ -1,0 +1,170 @@
+.acf-block-component {
+  .acf-block-fields p {
+    margin: 0 0 6px 0;
+  }
+  .components-placeholder {
+    &.components-placeholder {
+      background-color: transparent;
+      border-color: #ccc;
+      box-shadow: none;
+      outline: 2px dotted #ccc;
+    }
+  }
+
+// Special Editor Only Text
+  .entry-meta {
+    border: 1px dashed #ccc;
+    padding: 10px;
+
+    &:before {
+      content: 'Full preview for this block is not available yet in the block editor.';
+    }
+  }
+
+// enable editing of embed containers in block-editor
+  .wp-block-embed__wrapper {
+    border: 1px dashed #ccc;
+
+    iframe, object, embed {
+      margin: 2.5% !important;
+      height: 90% !important;
+      width: 95% !important;
+    }
+  }
+
+  .no-embeds {
+    border: 1px dashed #ccc;
+    padding: 20px;
+    display: block;
+    width: 100%;
+
+    &:before {
+      content: 'No embeds have been added yet. Click here to add an embed. If none is added, this section will not show.';
+    }
+
+    .video-column & {
+      &:before {
+        content: 'No video embeds have been added. Click here to add a video. If no video or chat are added, this section will not show';
+      }
+    }
+
+    .chat-column & {
+      &:before {
+        content: 'No chat embeds have been added. Click here to add a chat.';
+      }
+    }
+  }
+
+  .no-info {
+    border: 1px dashed #ccc;
+    padding: 10px;
+    display: block;
+    width: 100%;
+
+    &:before {
+      content: 'No information has been added that matches this block.';
+    }
+  }
+
+  .acfes-module--single .entry-meta, , .acfes_module_listgrid_posts .entry-meta {
+    background-color: inherit;
+    padding: inherit;
+
+    &:before {
+      content: '';
+    }
+  }
+}
+
+.acfes-list--single:before, .acfes-content--single:before, .acfes-grid--single:before {
+  display: none;
+}
+
+.acfes_module_countdown {
+  #countdownclock {
+    display: block !important;
+  }
+  .upcoming {
+    display: block !important;
+  }
+}
+
+
+
+
+.editor-styles-wrapper {
+  .acf-input {
+    ul {
+      margin: inherit;
+      padding: inherit;
+    }
+
+    .acf-radio-list {
+      li {
+        line-height: 33px;
+        label {
+          padding: .5em;
+          border: 1px solid #ddd;
+          visibility: hidden;
+
+          &:hover, &:focus {
+            background-color: #ddd;
+          }
+
+          &:first-of-type {
+            visibility: visible;
+          }
+        }
+
+        .selected {
+          background-color: #ddd;
+        }
+
+        input[type="radio"] {
+          display: inline-block;
+          visibility: visible;
+        }
+
+        input[type="text"] {
+          display: inline-block !important;
+        }
+      }
+    }
+
+  .iris-picker {
+    	height: auto !important;
+    	overflow: hidden;
+    	padding: 20px 20px 10px !important;
+    }
+
+    .iris-border .iris-palette-container {
+    	bottom: unset;
+    	left: unset;
+    	overflow: hidden;
+    	position: relative;
+    	top: unset;
+    }
+
+    .iris-picker .iris-palette {
+    	height: 40px !important;
+    	margin-bottom: 5%;
+    	margin-left: 0 !important;
+    	margin-right: 10px;
+    	width: calc(25% - 10px) !important;
+    }
+
+    .iris-picker .iris-palette:nth-child(4n) {
+    	margin-right: 0;
+    }
+
+
+    .iris-picker-inner {
+    	display: none;
+    }
+  }
+
+  figure {
+    margin: 0;
+  }
+
+}

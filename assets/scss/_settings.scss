@@ -1,0 +1,17 @@
+// Breakpoints
+$tiny-bp: 		19em !default; 		// 19em = 304px
+$sm-bp:			32em !default;		// 32em = 512px
+$med-bp:		48.75em !default;		// 48.75em = 780px
+$lg-bp:			61em !default;		// 61em = 976px
+$xl-bp:			75em !default;		// 75em = 1200px
+
+$max:       80em !default;
+
+// Default Paddings
+$sm-pad:		1rem !default;
+$big-pad:		3rem !default;
+
+// Gallery
+$gallery-height: 250px !default;
+$gallery-width: 250px !default;
+$gallery-gutter: 0.2em !default;

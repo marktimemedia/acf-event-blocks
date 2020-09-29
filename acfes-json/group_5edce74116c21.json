@@ -1,0 +1,567 @@
+{
+    "key": "group_5edce74116c21",
+    "title": "Block Event List",
+    "fields": [
+        {
+            "key": "field_5edced58fe180",
+            "label": "Event List Block",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
+        {
+            "key": "field_5edce86fd2dae",
+            "label": "Which type of event content?",
+            "name": "acfes_type_of_content",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "session": "Sessions",
+                "speaker": "Speakers",
+                "sponsor": "Sponsors",
+                "exhibitor": "Exhibitors"
+            },
+            "default_value": false,
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_5edce95cd2daf",
+            "label": "How are you selecting content?",
+            "name": "acfes_archive_select",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "all": "Show All",
+                "taxonomy": "Specific Category",
+                "manually": "Add Manually"
+            },
+            "default_value": "all",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_5edcea58d2db0",
+            "label": "Order",
+            "name": "acfes_archive_order",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5edce86fd2dae",
+                        "operator": "==",
+                        "value": "session"
+                    },
+                    {
+                        "field": "field_5edce95cd2daf",
+                        "operator": "!=",
+                        "value": "manually"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "title": "Alphabetical",
+                "meta_value": "By Time"
+            },
+            "default_value": false,
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "show_column": 0,
+            "show_column_sortable": 0,
+            "show_column_weight": 1000,
+            "allow_quickedit": 0,
+            "allow_bulkedit": 0,
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_5edf7e2b88e62",
+            "label": "Date",
+            "name": "acfes_session_date",
+            "type": "date_picker",
+            "instructions": "Optional: date of sessions",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5edce86fd2dae",
+                        "operator": "==",
+                        "value": "session"
+                    },
+                    {
+                        "field": "field_5edce95cd2daf",
+                        "operator": "!=",
+                        "value": "manually"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "display_format": "F j, Y",
+            "return_format": "F j, Y",
+            "first_day": 0,
+            "show_column": 0,
+            "show_column_sortable": 0,
+            "show_column_weight": 1000,
+            "allow_quickedit": 0,
+            "allow_bulkedit": 0
+        },
+        {
+            "key": "field_5edceb5ad2db5",
+            "label": "Session Category",
+            "name": "acfes_session_term",
+            "type": "taxonomy-chooser",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5edce86fd2dae",
+                        "operator": "==",
+                        "value": "session"
+                    },
+                    {
+                        "field": "field_5edce95cd2daf",
+                        "operator": "==",
+                        "value": "taxonomy"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "tax_type": 0,
+            "choices": [
+                "acfes_track",
+                "acfes_location",
+                "acfes_session_category"
+            ],
+            "type_value": 1,
+            "allow_null": 0,
+            "ui": 0,
+            "ajax": 0,
+            "multiple": 0
+        },
+        {
+            "key": "field_5edceaa1d2db1",
+            "label": "Speaker Category",
+            "name": "acfes_speaker_term",
+            "type": "taxonomy-chooser",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5edce86fd2dae",
+                        "operator": "==",
+                        "value": "speaker"
+                    },
+                    {
+                        "field": "field_5edce95cd2daf",
+                        "operator": "==",
+                        "value": "taxonomy"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "55",
+                "class": "",
+                "id": ""
+            },
+            "tax_type": 0,
+            "choices": [
+                "acfes_speaker_category"
+            ],
+            "type_value": 1,
+            "allow_null": 0,
+            "ui": 0,
+            "ajax": 0,
+            "multiple": 0
+        },
+        {
+            "key": "field_5edceb21d2db3",
+            "label": "Sponsor Category",
+            "name": "acfes_sponsor_term",
+            "type": "taxonomy-chooser",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5edce86fd2dae",
+                        "operator": "==",
+                        "value": "sponsor"
+                    },
+                    {
+                        "field": "field_5edce95cd2daf",
+                        "operator": "==",
+                        "value": "taxonomy"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "tax_type": 0,
+            "choices": [
+                "acfes_level",
+                "acfes_sponsor_category"
+            ],
+            "type_value": 1,
+            "allow_null": 0,
+            "ui": 0,
+            "ajax": 0,
+            "multiple": 0
+        },
+        {
+            "key": "field_5edceb98d2db7",
+            "label": "Exhibitor Category",
+            "name": "acfes_exhibitor_term",
+            "type": "taxonomy-chooser",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5edce86fd2dae",
+                        "operator": "==",
+                        "value": "exhibitor"
+                    },
+                    {
+                        "field": "field_5edce95cd2daf",
+                        "operator": "==",
+                        "value": "taxonomy"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "tax_type": 0,
+            "choices": [
+                "acfes_exhibitor_category"
+            ],
+            "type_value": 1,
+            "allow_null": 0,
+            "ui": 0,
+            "ajax": 0,
+            "multiple": 0
+        },
+        {
+            "key": "field_5edcee4170947",
+            "label": "Add Sessions",
+            "name": "acfes_archive_manual_sessions",
+            "type": "relationship",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5edce86fd2dae",
+                        "operator": "==",
+                        "value": "session"
+                    },
+                    {
+                        "field": "field_5edce95cd2daf",
+                        "operator": "==",
+                        "value": "manually"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "acfes_session"
+            ],
+            "taxonomy": "",
+            "filters": [
+                "search",
+                "taxonomy"
+            ],
+            "elements": [
+                "featured_image"
+            ],
+            "min": "",
+            "max": "",
+            "return_format": "object"
+        },
+        {
+            "key": "field_5edcedcd70944",
+            "label": "Add Speakers",
+            "name": "acfes_archive_manual_speakers",
+            "type": "relationship",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5edce86fd2dae",
+                        "operator": "==",
+                        "value": "speaker"
+                    },
+                    {
+                        "field": "field_5edce95cd2daf",
+                        "operator": "==",
+                        "value": "manually"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "acfes_speaker"
+            ],
+            "taxonomy": "",
+            "filters": [
+                "search",
+                "taxonomy"
+            ],
+            "elements": [
+                "featured_image"
+            ],
+            "min": "",
+            "max": "",
+            "return_format": "object"
+        },
+        {
+            "key": "field_5edcee2e70946",
+            "label": "Add Sponsors",
+            "name": "acfes_archive_manual_sponsors",
+            "type": "relationship",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5edce86fd2dae",
+                        "operator": "==",
+                        "value": "sponsor"
+                    },
+                    {
+                        "field": "field_5edce95cd2daf",
+                        "operator": "==",
+                        "value": "manually"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "acfes_sponsor"
+            ],
+            "taxonomy": "",
+            "filters": [
+                "search",
+                "taxonomy"
+            ],
+            "elements": [
+                "featured_image"
+            ],
+            "min": "",
+            "max": "",
+            "return_format": "object"
+        },
+        {
+            "key": "field_5edcf55a75aa9",
+            "label": "Add Exhibitors",
+            "name": "acfes_archive_manual_exhibitors",
+            "type": "relationship",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5edce86fd2dae",
+                        "operator": "==",
+                        "value": "exhibitor"
+                    },
+                    {
+                        "field": "field_5edce95cd2daf",
+                        "operator": "==",
+                        "value": "manually"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "acfes_exhibitor"
+            ],
+            "taxonomy": "",
+            "filters": [
+                "search",
+                "taxonomy"
+            ],
+            "elements": [
+                "featured_image"
+            ],
+            "min": "",
+            "max": "",
+            "return_format": "object"
+        },
+        {
+            "key": "field_5edcef9ff027e",
+            "label": "Options",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
+        {
+            "key": "field_5edcec0c255cf",
+            "label": "Show featured images?",
+            "name": "acfcs_show_featured_images",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "message": "Yes, Show Featured Images",
+            "default_value": 1,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_5edcec43255d0",
+            "label": "Show text summary?",
+            "name": "acfes_show_text_summary",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "message": "Yes, show a text summary along with the title",
+            "default_value": 1,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_5edcec68255d1",
+            "label": "Number to show?",
+            "name": "acfes_archive_taxonomy_number",
+            "type": "number",
+            "instructions": "Use -1 to show all of them. Depending on how many there are, this could affect performance.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5edce95cd2daf",
+                        "operator": "!=",
+                        "value": "manually"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 3,
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "min": -1,
+            "max": "",
+            "step": 1
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/acfes-block-list-posts"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1597416017
+}

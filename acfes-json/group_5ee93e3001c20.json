@@ -1,0 +1,74 @@
+{
+    "key": "group_5ee93e3001c20",
+    "title": "Block Meta Speaker Contact Info",
+    "fields": [
+        {
+            "key": "field_5ee93e30055ef",
+            "label": "Contact Info",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Select which contact info to show here",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
+        {
+            "key": "field_5ee93e30055f6",
+            "label": "Select which information to show",
+            "name": "acfes_select_meta",
+            "type": "checkbox",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "social": "Social Links",
+                "web": "Web Links",
+                "email": "Email"
+            },
+            "allow_custom": 0,
+            "default_value": [
+                "social",
+                "web",
+                "email"
+            ],
+            "layout": "vertical",
+            "toggle": 0,
+            "return_format": "value",
+            "show_column": 0,
+            "show_column_weight": 1000,
+            "allow_quickedit": 0,
+            "allow_bulkedit": 0,
+            "save_custom": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/acfes-block-speaker-meta"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1597001918
+}

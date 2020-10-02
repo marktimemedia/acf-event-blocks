@@ -152,7 +152,7 @@ function acfes_add_session_templates() {
 	$post_object->template = array(
 		array( 'core/cover', array(
 			'align' => 'full',
-			'overlayColor' => 'brand-color-1',
+			'overlayColor' => 'neutral-darkest',
 			'minHeight' => 200
 		),
 			array( $headline_block )
@@ -193,7 +193,7 @@ function acfes_add_speaker_templates() {
 	$post_object->template = array(
 		array( 'core/cover', array(
 			'align'        => 'full',
-			'overlayColor' => 'brand-color-1',
+			'overlayColor' => 'neutral-darkest',
 		), array(
 			$featured_img_block,
 		) ),
@@ -233,7 +233,7 @@ function acfes_add_sponsor_templates() {
 	$post_object->template = array(
 		array( 'core/cover', array(
 			'align'        => 'full',
-			'overlayColor' => 'brand-color-1',
+			'overlayColor' => 'neutral-darkest',
 		), array(
 			$featured_img_block,
 		) ),
@@ -274,7 +274,7 @@ function acfes_add_exhibitor_templates() {
 	$post_object->template = array(
 		array( 'core/cover', array(
 			'align'        => 'full',
-			'overlayColor' => 'brand-color-1',
+			'overlayColor' => 'neutral-darkest',
 		), array(
 			$featured_img_block,
 		) ),

@@ -14,7 +14,6 @@ $now             = current_time( 'Y-m-d H:i:s' );
 $pre_cta         = _get_field( 'acfes_pre_event_link' );
 $post_cta        = _get_field( 'acfes_post_event_link' );
 $acfes_term      = _get_field( 'acfes_live_event_taxonomy' );
-
 ?>
 
 <div class="<?php echo esc_attr( $class_name ); ?>" style="background-color:<?php the_field( 'acfes_background_color' ); ?>; color:<?php the_field( 'acfes_text_color' ); ?>;">
@@ -47,13 +46,13 @@ $acfes_term      = _get_field( 'acfes_live_event_taxonomy' );
 			?>
 		</div>
 		<div class="announcement announce-current">
-			<span><?php echo esc_html( __( 'Live Now:', 'acfes' ) ); ?></span>
+			<span><?php echo esc_html( __( 'Live Now', 'acfes' ) ); ?></span>
 		</div>
 		<div class="current">
 			<?php
 			if ( $showlive ) : // show the next upcoming event
 
-				$next_live = acfes_upcoming_events( $now, $countdown_end, $acfes_term, 1 );
+				$next_live = acfes_upcoming_events( $countdown_start, $now, $acfes_term, 1 );
 
 				if ( $next_live->have_posts() ) :
 					while ( $next_live->have_posts() ) :
@@ -65,7 +64,7 @@ $acfes_term      = _get_field( 'acfes_live_event_taxonomy' );
 						?>
 
 						<section class="acfes-countdown-content">
-							<strong><?php echo esc_html( __( 'Upcoming Session: ', 'acfes' ) . get_term( $acfes_term )->name ); ?></strong>
+							<strong><?php echo esc_html( __( 'Happening Now: ', 'acfes' ) . get_term( $acfes_term )->name . ' ' . get_taxonomy( get_term( $acfes_term )->taxonomy )->label ); ?></strong>
 							<h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
 							<?php
 							if ( $session_time && ! $session_end_time ) {

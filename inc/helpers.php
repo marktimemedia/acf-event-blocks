@@ -783,6 +783,48 @@ function acfes_upcoming_events( $start_time = '', $end_time = '', $acfes_term = 
 }
 
 /**
+* Current Events
+*/
+function acfes_current_event( $start_time = '', $now = '', $acfes_term = '' ) {
+
+	$query_args = array(
+		'post_type'      => 'acfes_session',
+		'post_status'    => 'publish',
+		'posts_per_page' => 1,
+		'meta_key'       => 'acfes_session_time',
+		'orderby'        => 'meta_value_num',
+		'order'          => 'DESC',
+		'meta_query'     => array(
+			'relation' => 'AND',
+			array(
+				'key'     => 'acfes_session_time',
+				'compare' => 'EXISTS',
+			),
+		),
+	);
+	if ( ( $start_time && strtotime( $start_time ) ) && ( $now && strtotime( $now ) ) ) {
+		$query_args['meta_query'][] = array(
+			'key'     => 'acfes_session_time',
+			'value'   => array(
+				strtotime( $start_time ),
+				strtotime( $now ),
+			),
+			'compare' => 'BETWEEN',
+			'type'    => 'NUMERIC',
+		);
+	}
+	if ( $acfes_term ) {
+		$query_args['tax_query'][] = array(
+			'taxonomy' => get_term( $acfes_term )->taxonomy,
+			'field'    => 'slug',
+			'terms'    => get_term( $acfes_term )->slug,
+		);
+	}
+
+	return new WP_Query( $query_args );
+}
+
+/**
 * Outputs the post thumbnail with fallback for the default image
 */
 if ( ! function_exists( 'the_acfes_post_thumbnail_cropped' ) ) {

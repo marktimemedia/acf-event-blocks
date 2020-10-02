@@ -52,7 +52,7 @@ $acfes_term      = _get_field( 'acfes_live_event_taxonomy' );
 			<?php
 			if ( $showlive ) : // show the next upcoming event
 
-				$next_live = acfes_upcoming_events( $countdown_start, $now, $acfes_term, 1 );
+				$next_live = acfes_current_event( $countdown_start, $now, $acfes_term );
 
 				if ( $next_live->have_posts() ) :
 					while ( $next_live->have_posts() ) :

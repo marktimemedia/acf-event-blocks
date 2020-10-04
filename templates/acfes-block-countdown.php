@@ -46,13 +46,15 @@ $acfes_term      = _get_field( 'acfes_live_event_taxonomy' );
 			?>
 		</div>
 		<div class="announcement announce-current">
-			<span><?php echo esc_html( __( 'Live Now', 'acfes' ) ); ?></span>
+			<span><?php echo wp_kses_post( 'Welcome to <br>' . get_bloginfo( 'title' ) ); ?></span>
 		</div>
 		<div class="current">
 			<?php
 			if ( $showlive ) : // show the next upcoming event
 
-				$next_live = acfes_current_event( $countdown_start, $now, $acfes_term );
+				$next_live   = acfes_current_event( $countdown_start, $now, $acfes_term );
+				$future_live = acfes_upcoming_events( $now, $countdown_end, $acfes_term, 1 );
+				$track_name  = get_field( 'acfes_show_session_track' ) ? get_term( $acfes_term )->name . ' ' . get_taxonomy( get_term( $acfes_term )->taxonomy )->label : '';
 
 				if ( $next_live->have_posts() ) :
 					while ( $next_live->have_posts() ) :
@@ -64,7 +66,7 @@ $acfes_term      = _get_field( 'acfes_live_event_taxonomy' );
 						?>
 
 						<section class="acfes-countdown-content">
-							<strong><?php echo esc_html( __( 'Happening Now: ', 'acfes' ) . get_term( $acfes_term )->name . ' ' . get_taxonomy( get_term( $acfes_term )->taxonomy )->label ); ?></strong>
+							<strong><?php echo esc_html( __( 'Happening Now: ', 'acfes' ) . $track_name ); ?></strong>
 							<h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
 							<?php
 							if ( $session_time && ! $session_end_time ) {
@@ -77,6 +79,29 @@ $acfes_term      = _get_field( 'acfes_live_event_taxonomy' );
 
 						<?php
 					endwhile;
+					elseif ( $future_live->have_posts() ) :
+						while ( $future_live->have_posts() ) :
+							$future_live->the_post(); // upcoming session
+
+							$session_time     = strtotime( get_field( 'acfes_session_time', get_the_ID() ) );
+							$session_end_time = strtotime( get_field( 'acfes_session_end_time', get_the_ID() ) );
+							$time_format      = get_option( 'time_format', 'g:i a' );
+							?>
+
+							<section class="acfes-countdown-content">
+								<strong><?php echo esc_html( __( 'Up Next: ', 'acfes' ) . $track_name ); ?></strong>
+								<h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
+								<?php
+								if ( $session_time && ! $session_end_time ) {
+									echo '<time>At ' . esc_html( gmdate( $time_format, $session_time ) ) . ' (' . esc_html( wp_timezone_string() ) . ')</time>';
+								} elseif ( $session_time && $session_end_time ) {
+									echo '<time>From ' . esc_html( gmdate( $time_format, $session_time ) ) . ' to ' . esc_html( gmdate( $time_format, $session_end_time ) ) . ' (' . esc_html( wp_timezone_string() ) . ')</time>';
+								}
+								?>
+							</section>
+
+							<?php
+						endwhile;
 				else : // no upcoming sessions but still live event
 					?>
 

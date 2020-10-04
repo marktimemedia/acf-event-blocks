@@ -60,6 +60,33 @@
             "multiple": 0
         },
         {
+            "key": "field_5f79cc6c2a078",
+            "label": "",
+            "name": "acfes_show_session_track",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5ef2a86984f4a",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Show this category alongside the session?",
+            "default_value": 1,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
             "key": "field_5ef2a90484f4b",
             "label": "Countdown Text",
             "name": "acfes_countdown_text",
@@ -175,5 +202,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1596999774
+    "modified": 1601817819
 }

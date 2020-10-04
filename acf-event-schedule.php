@@ -3,7 +3,7 @@
  * @wordpress-plugin
  * Plugin Name:       ACF Event Schedule
  * Description:       Sessions, Speakers, and Sponsors for Events, built with Advanced Custom Fields
- * Version:           1.0.4
+ * Version:           1.0.5
  * Author:            Marktime Media (h/t Road Warrior Creative)
  * Author URI:        https://marktimemedia.com
  * License:           GPL-2.0+

@@ -783,7 +783,7 @@ function acfes_upcoming_events( $start_time = '', $end_time = '', $acfes_term = 
 }
 
 /**
-* Current Events
+* Current Event
 */
 function acfes_current_event( $start_time = '', $now = '', $acfes_term = '' ) {
 
@@ -804,13 +804,22 @@ function acfes_current_event( $start_time = '', $now = '', $acfes_term = '' ) {
 	);
 	if ( ( $start_time && strtotime( $start_time ) ) && ( $now && strtotime( $now ) ) ) {
 		$query_args['meta_query'][] = array(
-			'key'     => 'acfes_session_time',
-			'value'   => array(
-				strtotime( $start_time ),
-				strtotime( $now ),
+			'relation' => 'AND',
+			array(
+				'key'     => 'acfes_session_time',
+				'value'   => array(
+					strtotime( $start_time ),
+					strtotime( $now ),
+				),
+				'compare' => 'BETWEEN',
+				'type'    => 'NUMERIC',
 			),
-			'compare' => 'BETWEEN',
-			'type'    => 'NUMERIC',
+			array(
+				'key'     => 'acfes_session_end_time',
+				'value'   => strtotime( $now ),
+				'compare' => '>=',
+				'type'    => 'NUMERIC',
+			),
 		);
 	}
 	if ( $acfes_term ) {
